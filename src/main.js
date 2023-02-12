@@ -4,6 +4,20 @@ import router from './router'
 import store from './store'
 import '@/assets/global.less'
 import '@/elementUI/index'
+import VueQuillEditor from 'vue-quill-editor'
+
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+// 导入dayjs方法
+import dayjs from 'dayjs'
+
+// 定义时间格式化函数
+Vue.prototype.$formatDate = (dateObj) => {
+  return dayjs(dateObj).format('YYYY-MM-DD HH:mm:ss')
+}
+Vue.use(VueQuillEditor /* { default global options } */)
 Vue.config.productionTip = false
 
 new Vue({
